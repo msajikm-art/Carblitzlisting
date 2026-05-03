@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2021 Honda Civic Sedan LX – Car Blitz</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  background: #ffffff;
+  color: #333333;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ── NAV ── */
+nav {
+  background: #1a1a2e;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  border-bottom: 3px solid #e8a020;
+}
+.nav-logo {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  gap: 0;
+}
+.nav-links a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: #e8a020; }
+
+/* ── MAIN WRAPPER ── */
+.wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 16px 60px;
+}
+
+/* ── CAR TITLE BLOCK ── */
+.car-title-section {
+  text-align: center;
+  padding: 28px 0 10px;
+  border-bottom: 1px solid #eeeeee;
+  margin-bottom: 6px;
+}
+.car-title-section h2 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+.car-title-section .car-name {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #111111;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+.posted-date {
+  font-size: 0.85rem;
+  color: #888888;
+  margin-bottom: 0;
+}
+
+/* ── SECTION DIVIDER ── */
+.divider {
+  border: none;
+  border-top: 2px solid #eeeeee;
+  margin: 18px 0;
+}
+
+/* ── PHOTO ── */
+.photo-section {
+  margin: 14px 0;
+  text-align: center;
+}
+.photo-section img.main-car-photo {
+  width: 100%;
+  max-width: 640px;
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+.thumb-row {
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 4px 0;
+}
+.thumb-row img {
+  width: 80px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 3px;
+  cursor: pointer;
+  opacity: 0.65;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+}
+.thumb-row img:hover, .thumb-row img.active {
+  opacity: 1;
+  border-color: #e8a020;
+}
+
+/* ── H1 BOLD INFO BLOCK (Car Blitz style big bold text) ── */
+.big-info-block {
+  background: #f9f9f9;
+  border-left: 5px solid #e8a020;
+  padding: 18px 20px;
+  margin: 16px 0;
+  border-radius: 0 4px 4px 0;
+}
+.big-info-block h1 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.7;
+}
+.big-info-block h1 strong {
+  color: #1a1a2e;
+}
+
+/* ── CTA BUTTON ── */
+.cta-wrap {
+  text-align: center;
+  margin: 20px 0 8px;
+}
+.btn-cta {
+  display: inline-block;
+  background: #e8a020;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 15px 32px;
+  border-radius: 4px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-transform: uppercase;
+  box-shadow: 0 4px 14px rgba(232,160,32,0.35);
+}
+.btn-cta:hover { background: #c98a10; }
+.btn-cta-dark {
+  display: inline-block;
+  background: #1a1a2e;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 15px 32px;
+  border-radius: 4px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-transform: uppercase;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  width: 100%;
+}
+.btn-cta-dark:hover { background: #2d2d50; }
+
+/* ── OR DIVIDER ── */
+.or-line {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #111;
+  margin: 14px 0;
+  position: relative;
+}
+.or-line::before, .or-line::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 42%;
+  height: 1px;
+  background: #dddddd;
+}
+.or-line::before { left: 0; }
+.or-line::after { right: 0; }
+
+/* ── DISCLAIMER NOTE ── */
+.note-text {
+  font-size: 0.82rem;
+  color: #777777;
+  text-align: center;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+.note-text a { color: #e8a020; }
+
+/* ── BID SECTION HEADING ── */
+.section-h1 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #111111;
+  text-align: center;
+  margin: 22px 0 10px;
+  line-height: 1.4;
+}
+.section-h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #444444;
+  text-align: center;
+  margin: 0 0 14px;
+  line-height: 1.5;
+}
+
+/* ── SPECS LIST ── */
+.specs-list {
+  list-style: none;
+  margin: 14px 0;
+  padding: 0;
+  background: #f9f9f9;
+  border-radius: 4px;
+  border: 1px solid #eeeeee;
+  overflow: hidden;
+}
+.specs-list li {
+  padding: 12px 18px;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 0.97rem;
+  color: #333;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+.specs-list li:last-child { border-bottom: none; }
+.specs-list li strong {
+  color: #1a1a2e;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── AI ANALYSIS ── */
+.ai-section {
+  margin: 22px 0;
+}
+.ai-section h1 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #111111;
+  text-align: center;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.ai-section h2 {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #666666;
+  text-align: center;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+.ai-bars {
+  background: #f9f9f9;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+.ai-bar-row {
+  margin-bottom: 14px;
+}
+.ai-bar-row:last-child { margin-bottom: 0; }
+.ai-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 5px;
+}
+.ai-bar-track {
+  background: #e0e0e0;
+  border-radius: 20px;
+  height: 10px;
+  overflow: hidden;
+}
+.ai-bar-fill {
+  height: 100%;
+  border-radius: 20px;
+  background: #e8a020;
+}
+
+/* ── SAFETY FEATURES ── */
+.safety-section {
+  margin: 20px 0;
+}
+.safety-section h2 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.safety-list {
+  list-style: none;
+  padding: 0;
+  counter-reset: safety-counter;
+}
+.safety-list li {
+  counter-increment: safety-counter;
+  padding: 10px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.93rem;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.safety-list li::before {
+  content: counter(safety-counter);
+  background: #1a1a2e;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.safety-list li:last-child { border-bottom: none; }
+.negotiable-tag {
+  background: #fff3cd;
+  border: 1px solid #e8a020;
+  color: #7a5000;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 4px;
+  text-align: center;
+  margin: 14px 0;
+}
+
+/* ── FORM ── */
+.form-section {
+  background: #f9f9f9;
+  border: 1px solid #eeeeee;
+  border-radius: 6px;
+  padding: 22px 20px;
+  margin: 16px 0;
+}
+.form-section h1 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #111;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.form-field {
+  margin-bottom: 12px;
+}
+.form-field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #444;
+  margin-bottom: 5px;
+}
+.form-field input,
+.form-field textarea,
+.form-field select {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  font-size: 0.93rem;
+  font-family: 'Open Sans', Arial, sans-serif;
+  background: #fff;
+  color: #333;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-field input:focus,
+.form-field textarea:focus { border-color: #e8a020; }
+.form-field textarea { min-height: 90px; resize: vertical; }
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: #555;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.checkbox-row input[type="checkbox"] {
+  margin-top: 3px;
+  width: auto;
+  flex-shrink: 0;
+  accent-color: #e8a020;
+}
+
+/* ── SHARE ── */
+.share-section {
+  margin: 22px 0;
+  text-align: center;
+}
+.share-section h1 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+.share-btns {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.share-btn {
+  padding: 11px 20px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  letter-spacing: 0.3px;
+}
+.share-btn:hover { opacity: 0.85; }
+.sh-fb { background: #1877f2; }
+.sh-wa { background: #25d366; }
+.sh-x  { background: #000000; }
+.sh-sm { background: #888888; }
+
+/* ── LIBRARY LINK ── */
+.library-block {
+  background: #1a1a2e;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 22px 0;
+}
+.library-block p {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.library-block a {
+  display: inline-block;
+  background: #e8a020;
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 800;
+  padding: 11px 22px;
+  border-radius: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── FOOTER DISCLAIMER ── */
+.footer-disclaimer {
+  background: #f5f5f5;
+  border-top: 2px solid #eeeeee;
+  padding: 24px 20px;
+  margin-top: 20px;
+}
+.footer-disclaimer p {
+  font-size: 0.78rem;
+  color: #888888;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+.footer-disclaimer p:last-child { margin-bottom: 0; }
+.footer-disclaimer a { color: #e8a020; }
+
+/* ── SPONSORED AD ── */
+.sponsored-block {
+  background: #fffbf0;
+  border: 1px dashed #e8a020;
+  padding: 14px 16px;
+  border-radius: 4px;
+  margin: 18px 0;
+}
+.sponsored-block h1 {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #7a5000;
+  margin-bottom: 6px;
+}
+.sponsored-block p {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+@media (max-width: 500px) {
+  .car-title-section .car-name { font-size: 1.4rem; }
+  .nav-links a { padding: 6px 8px; font-size: 0.75rem; }
+  .big-info-block h1 { font-size: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Car Blitz</a>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">Sell My Car</a>
+    <a href="#">Refer</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- CAR TITLE -->
+  <div class="car-title-section">
+    <div class="car-name">2021 Honda Civic Sedan LX</div>
+    <div class="posted-date">Posted on 28-04-2025</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- MAIN PHOTO -->
+  <div class="photo-section">
+    <img class="main-car-photo" id="mainPhoto"
+      src="https://imagescdn.d2cmedia.ca/s813565bd62a803b40be876faef9ce057a/3715/13698941/1/Honda-Civic_Sedan-2021.jpg"
+      alt="2021 Honda Civic Sedan LX">
+    <div class="thumb-row" id="thumbRow"></div>
+  </div>
+
+  <!-- PRICE & KEY INFO BLOCK -->
+  <div class="big-info-block">
+    <h1>
+      <strong>Cash Price:</strong> $22,490<br>
+      <strong>Finance Price:</strong> $20,990 (Save $1,500)<br>
+      <strong>Financing Option:</strong> Affordable financing available – apply online<br>
+      <strong>Sale Type:</strong> Dealership Sale – Roadsport Honda, Toronto<br>
+      <strong>Title:</strong> Clean title – Honda Certified 7YRS / 160,000 km Warranty<br>
+      <strong>Condition:</strong> Excellent condition – dealer serviced with full records
+    </h1>
+  </div>
+
+  <!-- CTA 1 -->
+  <div class="cta-wrap">
+    <a href="#ask-form" class="btn-cta">Click Here To Message The Seller For More Information</a>
+  </div>
+
+  <div class="or-line">Or</div>
+
+  <!-- BID CTA -->
+  <div class="cta-wrap">
+    <a href="#bid-form" class="btn-cta" style="background:#1a1a2e;box-shadow:0 4px 14px rgba(0,0,0,0.2);">Place A Free Bid On This Car</a>
+  </div>
+
+  <div class="note-text">
+    Car Blitz is a listing platform; all communication is between you and the seller, and your info will be shared with seller and referral info will be stored for the draw.
+    See our <a href="#">Privacy Policy Here</a>
+  </div>
+
+  <hr class="divider">
+
+  <!-- BID SECTION HEADING -->
+  <div class="section-h1">You Can Place A Bid On This Car For FREE And If The Seller Likes It, Then They Will Contact You…</div>
+
+  <!-- BID FORM -->
+  <div class="form-section" id="bid-form">
+    <h1>Place Your Bid Below…</h1>
+    <div class="form-field">
+      <label>Your Name *</label>
+      <input type="text" placeholder="Full name">
+    </div>
+    <div class="form-field">
+      <label>Your Email *</label>
+      <input type="email" placeholder="email@example.com">
+    </div>
+    <div class="form-field">
+      <label>Your Phone</label>
+      <input type="tel" placeholder="Phone number (optional)">
+    </div>
+    <div class="form-field">
+      <label>Your Bid Offer</label>
+      <input type="text" placeholder="e.g. $20,000">
+    </div>
+    <div class="form-field">
+      <label>Message</label>
+      <textarea placeholder="Any questions or comments for the seller…"></textarea>
+    </div>
+    <label class="checkbox-row">
+      <input type="checkbox"> I am interested in a test drive (optional)
+    </label>
+    <label class="checkbox-row">
+      <input type="checkbox"> I am interested in a video call test drive first (optional)
+    </label>
+    <div class="cta-wrap" style="margin-top:10px;">
+      <button class="btn-cta" style="width:100%;" onclick="alert('Your bid has been sent! The seller will contact you if interested.')">Click Here To Submit Your Bid</button>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SPONSORED AD 1 -->
+  <div class="sponsored-block">
+    <h1>Sponsored Ad 1</h1>
+    <p>You can get a part time job as a live chat assistant for big companies. The pay is a bit low but still a good side income from your home. You can check this out…</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SPECS LIST -->
+  <ul class="specs-list">
+    <li><strong>No. of Owners:</strong> &nbsp;3 owners</li>
+    <li><strong>Mileage:</strong> &nbsp;68,442 kms</li>
+    <li><strong>Transmission:</strong> &nbsp;CVT – Continuously Variable</li>
+    <li><strong>Engine:</strong> &nbsp;2.0L I-4 DOHC 16-Valve i-VTEC</li>
+    <li><strong>Drive Train:</strong> &nbsp;Front-Wheel Drive (FWD)</li>
+    <li><strong>Exterior Colour:</strong> &nbsp;Modern Steel Metallic</li>
+    <li><strong>Interior Colour:</strong> &nbsp;Black</li>
+    <li><strong>Servicing:</strong> &nbsp;Dealer serviced – full service records available</li>
+    <li><strong>Fuel Efficiency:</strong> &nbsp;8.9 L/100km City · 6.5 L/100km Hwy (avg)</li>
+    <li><strong>Tires:</strong> &nbsp;All-weather and winter tires included</li>
+    <li><strong>Stock #:</strong> &nbsp;67947A</li>
+    <li><strong>VIN:</strong> &nbsp;2HGFC2F50MH003872</li>
+  </ul>
+
+  <hr class="divider">
+
+  <!-- AI ANALYSIS -->
+  <div class="ai-section">
+    <h1>We Ran A 3 Step AI Analysis Of This Car's Images To Predict The Condition Of This Car And Below Is The Report…</h1>
+    <h2>AI Can Analyze The Images Better Than A Human, so the below report will give you a clearer prediction to the condition of this car…</h2>
+
+    <div class="ai-bars">
+      <div class="ai-bar-row">
+        <div class="ai-bar-label"><span>Exterior Condition</span><span>88 / 100</span></div>
+        <div class="ai-bar-track"><div class="ai-bar-fill" style="width:88%"></div></div>
+      </div>
+      <div class="ai-bar-row">
+        <div class="ai-bar-label"><span>Interior Condition</span><span>91 / 100</span></div>
+        <div class="ai-bar-track"><div class="ai-bar-fill" style="width:91%"></div></div>
+      </div>
+      <div class="ai-bar-row">
+        <div class="ai-bar-label"><span>Mechanical Reliability</span><span>94 / 100</span></div>
+        <div class="ai-bar-track"><div class="ai-bar-fill" style="width:94%"></div></div>
+      </div>
+      <div class="ai-bar-row">
+        <div class="ai-bar-label"><span>Value For Price</span><span>85 / 100</span></div>
+        <div class="ai-bar-track"><div class="ai-bar-fill" style="width:85%"></div></div>
+      </div>
+    </div>
+    <div class="note-text">Please note that the above is just to give you an idea, please do full research…</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SAFETY FEATURES -->
+  <div class="safety-section">
+    <h2>Safety Features That Could Save Your And Your Family's Life One Day…</h2>
+    <ul class="safety-list">
+      <li>Dual front side-mounted airbags</li>
+      <li>Front and rear head airbags</li>
+      <li>Passenger airbag occupant sensing deactivation</li>
+      <li>Stability control (VSA)</li>
+      <li>Traction control system</li>
+      <li>Child seat anchors (LATCH)</li>
+      <li>Rear door child safety locks</li>
+      <li>4-wheel ABS braking</li>
+      <li>Ventilated front disc / solid rear disc brakes</li>
+      <li>Honda Sensing – collision mitigation braking</li>
+      <li>Lane keeping assist system</li>
+      <li>Road departure mitigation</li>
+      <li>Adaptive cruise control</li>
+      <li>Tire pressure monitoring system (TPMS)</li>
+    </ul>
+    <div class="note-text" style="margin-top:10px;">And way more…</div>
+  </div>
+
+  <div class="negotiable-tag">⚠️ This price is slightly negotiable</div>
+
+  <!-- CTA 2 -->
+  <div class="cta-wrap">
+    <a href="#ask-form" class="btn-cta">Click Here To Message The Seller For More Information</a>
+  </div>
+
+  <div class="or-line">Or</div>
+
+  <div class="cta-wrap">
+    <a href="#bid-form" class="btn-cta" style="background:#1a1a2e;box-shadow:0 4px 14px rgba(0,0,0,0.2);">Place A Free Bid On This Car</a>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SPONSORED AD 2 -->
+  <div class="sponsored-block">
+    <h1>Sponsored Ad 2</h1>
+    <p>Make A Small Side Income Taking Paid Surveys In Your Free Time (This Is FREE Access)</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ASK FORM -->
+  <div class="form-section" id="ask-form">
+    <h1>Ask Your Questions Below…</h1>
+    <div class="form-field">
+      <label>Your Name *</label>
+      <input type="text" placeholder="Full name">
+    </div>
+    <div class="form-field">
+      <label>Your Email *</label>
+      <input type="email" placeholder="email@example.com">
+    </div>
+    <div class="form-field">
+      <label>Your Phone</label>
+      <input type="tel" placeholder="Phone number (optional)">
+    </div>
+    <div class="form-field">
+      <label>Your Question or Message *</label>
+      <textarea placeholder="Type your question here…"></textarea>
+    </div>
+    <label class="checkbox-row">
+      <input type="checkbox"> I am interested in a test drive (optional)
+    </label>
+    <label class="checkbox-row">
+      <input type="checkbox"> I am interested in a video call test drive first (optional)
+    </label>
+    <div class="cta-wrap" style="margin-top:10px;">
+      <button class="btn-cta" style="width:100%;" onclick="alert('Your message has been sent! The seller will contact you shortly.')">Click Here To Ask</button>
+    </div>
+  </div>
+
+  <div class="note-text" style="margin-top:6px;">
+    Car Blitz is a listing platform and does not verify seller info or vehicle details. All communication is between you and the seller. Be careful of scams.
+    <a href="#">Privacy details here</a>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SHARE SECTION -->
+  <div class="share-section">
+    <h1>You Know Someone Who Will Be Interested In This Car Or You Want To Help The Car Owner, You Can Use The Below Buttons To Share This Page…</h1>
+    <div class="share-btns">
+      <button class="share-btn sh-fb" onclick="alert('Share on Facebook')">Facebook</button>
+      <button class="share-btn sh-wa" onclick="alert('Share on WhatsApp')">WhatsApp</button>
+      <button class="share-btn sh-x"  onclick="alert('Share on X')">X / Twitter</button>
+      <button class="share-btn sh-sm" onclick="alert('Share via SMS')">SMS</button>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- LIBRARY -->
+  <div class="library-block">
+    <p>FREE Access To Our Step By Step Guide To Buy A Car And Our Car Blitz Library…</p>
+    <a href="#">Free Instant Access To The Car Blitz Library (No Sign Up Required)</a>
+  </div>
+
+  <!-- FOOTER DISCLAIMER -->
+  <div class="footer-disclaimer">
+    <p>Car Blitz is a registered Not-for-Profit Organization based in Ontario. Car Blitz is not a motor vehicle dealer and does not buy, sell, trade, or broker vehicles. The Car Blitz platform is a classified advertising and community site that connects private sellers, car owners, and buyers.</p>
+    <p>All vehicle details, descriptions, images, prices, and offers displayed on this website are provided by the individual sellers or dealerships. Car Blitz does not verify the accuracy of this information and does not guarantee the condition, history, specifications, or roadworthiness of any vehicle. Vehicles sold via private sellers are offered as-is.</p>
+    <p>Car Blitz does not facilitate sales, negotiate prices, or participate in any transaction between buyers and sellers. We do not charge commissions on vehicle sales. Buyers and sellers are strongly encouraged to perform their own due diligence, including vehicle history checks, inspection, and verification of ownership before completing any transaction.</p>
+    <p>Always do your own research and exercise caution when contacting sellers. Beware of scams and do not share sensitive personal or financial information. <a href="#">Go here</a> for full policy and terms of use of our site…</p>
+  </div>
+
+</div><!-- /wrap -->
+
+<script>
+// Build thumbnails
+const base = 'https://imagescdn.d2cmedia.ca/cb13565bd62a803b40be876faef9ce057a/3715/13698941/';
+const mainPhoto = document.getElementById('mainPhoto');
+const thumbRow = document.getElementById('thumbRow');
+const total = 21;
+
+for (let i = 1; i <= total; i++) {
+  const img = document.createElement('img');
+  img.src = i === 1
+    ? 'https://imagescdn.d2cmedia.ca/s813565bd62a803b40be876faef9ce057a/3715/13698941/1/Honda-Civic_Sedan-2021.jpg'
+    : `${base}${i}/Honda-Civic_Sedan-2021.jpg`;
+  img.alt = `Photo ${i}`;
+  if (i === 1) img.classList.add('active');
+  img.addEventListener('click', () => {
+    mainPhoto.src = img.src;
+    thumbRow.querySelectorAll('img').forEach(t => t.classList.remove('active'));
+    img.classList.add('active');
+  });
+  thumbRow.appendChild(img);
+}
+</script>
+</body>
+</html>
